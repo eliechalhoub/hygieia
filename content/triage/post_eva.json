@@ -1,0 +1,92 @@
+{
+  "id": "post_eva",
+  "title": "Joint pain or breathing trouble after EVA",
+  "voice_aliases": ["after eva", "joint pain", "decompression", "the bends"],
+  "disclaimer": "Follows general first-aid logic. A flight surgeon approves the protocol flown on a mission.",
+  "start": "responsive",
+  "nodes": {
+    "responsive": {
+      "prompt": "Is the person awake and answering?",
+      "help": "Tap the shoulder. Ask loudly: are you OK?",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "breathing" },
+        { "label": "No", "voice": "no", "next": "breathing_check" }
+      ]
+    },
+    "breathing_check": {
+      "prompt": "Are they breathing normally?",
+      "help": "Open the airway. Watch the chest for 10 seconds.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "oxygen" },
+        { "label": "No", "voice": "no", "next": "cpr", "action": "start_cpr" }
+      ]
+    },
+    "breathing": {
+      "prompt": "Is there chest pain, cough or trouble breathing?",
+      "help": "Breathing symptoms after EVA are more serious than joint pain alone.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "oxygen" },
+        { "label": "No", "voice": "no", "next": "joints" }
+      ]
+    },
+    "joints": {
+      "prompt": "Is there deep joint pain, skin mottling, numbness or weakness?",
+      "help": "Ask where it hurts and when it started.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "oxygen" },
+        { "label": "No", "voice": "no", "next": "vitals" }
+      ]
+    },
+    "oxygen": {
+      "prompt": "Give 100% oxygen now. Keep them still.",
+      "help": "Fit the mask tightly. Do not let them exercise the sore joint.",
+      "cause": "Possible decompression sickness",
+      "requires_kit": "oxygen",
+      "else": "vitals",
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "vitals" }
+      ]
+    },
+    "vitals": {
+      "prompt": "Take vital signs.",
+      "help": "Enter what you can. Skip what you cannot measure.",
+      "capture_vitals": ["spo2", "hr", "bp_sys", "bp_dia"],
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "recompress" }
+      ]
+    },
+    "recompress": {
+      "prompt": "Prepare recompression in the suit or airlock.",
+      "help": "Only with the Crew Medical Officer. Keep oxygen on during the move.",
+      "requires_kit": "recompression",
+      "else": "monitor",
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "monitor" },
+        { "label": "Skip", "voice": "no", "next": "monitor" }
+      ]
+    },
+    "monitor": {
+      "prompt": "Did they stop responding or stop breathing?",
+      "help": "Keep watching. Re-check vital signs every 5 minutes.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "cpr", "action": "start_cpr" },
+        { "label": "No", "voice": "no", "next": "end" }
+      ]
+    },
+    "cpr": {
+      "type": "cpr",
+      "prompt": "Start CPR now.",
+      "help": "Push to the beat. Attach the defibrillator as soon as it arrives.",
+      "kit_actions": ["aed"],
+      "options": [
+        { "label": "Stop CPR", "voice": "stop", "next": "end" }
+      ]
+    },
+    "end": {
+      "type": "end",
+      "prompt": "Report ready for Houston.",
+      "help": "The log is compressed and queued on the delayed link.",
+      "options": []
+    }
+  }
+}

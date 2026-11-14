@@ -1,0 +1,418 @@
+{
+ "fetched_at": "2026-11-14T15:20:54.564Z",
+ "source_url": "https://visualization.osdr.nasa.gov/biodata/api/",
+ "credit": "NASA Open Science Data Repository (OSDR)",
+ "license": "NASA open data. Metadata only; no raw omics are downloaded.",
+ "total_datasets_seen": 647,
+ "studies": [
+  {
+   "osd_id": "OSD-18",
+   "title": "Microarray Profile of Gene Expression during Osteoclast Differentiation in Modeled Microgravity",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-18",
+   "tags": [
+    "bone"
+   ]
+  },
+  {
+   "osd_id": "OSD-21",
+   "title": "Effects of spaceflight on murine skeletal muscle gene expression",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-21",
+   "tags": [
+    "muscle"
+   ]
+  },
+  {
+   "osd_id": "OSD-25",
+   "title": "STS-135 Liver Transcriptomics",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-25",
+   "tags": [
+    "nutrition"
+   ]
+  },
+  {
+   "osd_id": "OSD-29",
+   "title": "Genechip analysis of bone marrow osteoprogenitors exposed to microgravity",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-29",
+   "tags": [
+    "bone"
+   ]
+  },
+  {
+   "osd_id": "OSD-30",
+   "title": "Transcription profiling of mouse osteoblasts under static vs simulated microgravity",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-30",
+   "tags": [
+    "bone"
+   ]
+  },
+  {
+   "osd_id": "OSD-47",
+   "title": "Rodent Research-1 (RR1) National Lab Validation Flight: Mouse liver transcriptomic, proteomic, epigenomic and histology data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-47",
+   "tags": [
+    "nutrition"
+   ]
+  },
+  {
+   "osd_id": "OSD-48",
+   "title": "Rodent Research-1 (RR1) NASA Validation Flight: Mouse liver transcriptomic, proteomic, epigenomic and histology data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-48",
+   "tags": [
+    "nutrition"
+   ]
+  },
+  {
+   "osd_id": "OSD-49",
+   "title": "Multi-omic investigations of mouse liver subjected to simulated spaceflight freezing and storage protocols",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-49",
+   "tags": [
+    "nutrition"
+   ]
+  },
+  {
+   "osd_id": "OSD-53",
+   "title": "Spaceflight Modulates Gene Expression in Astronauts",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-53",
+   "tags": [
+    "human"
+   ]
+  },
+  {
+   "osd_id": "OSD-87",
+   "title": "Spaceflight effects on the mouse retina: Histological, gene expression and epigenetic changes after flight on STS-135",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-87",
+   "tags": [
+    "eye"
+   ]
+  },
+  {
+   "osd_id": "OSD-99",
+   "title": "Rodent Research-1 (RR1) NASA Validation Flight: Mouse extensor digitorum longus muscle transcriptomic and epigenomic data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-99",
+   "tags": [
+    "muscle"
+   ]
+  },
+  {
+   "osd_id": "OSD-100",
+   "title": "Rodent Research-1 (RR1) NASA Validation Flight: Mouse eye transcriptomic and epigenomic data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-100",
+   "tags": [
+    "eye"
+   ]
+  },
+  {
+   "osd_id": "OSD-101",
+   "title": "Rodent Research-1 (RR1) NASA Validation Flight: Mouse left gastrocnemius muscle transcriptomic, proteomic, and epigenomic data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-101",
+   "tags": [
+    "muscle"
+   ]
+  },
+  {
+   "osd_id": "OSD-103",
+   "title": "Rodent Research-1 (RR1) NASA Validation Flight: Mouse quadriceps muscle transcriptomic, proteomic, and epigenomic data",
+   "organism": "Mus musculus, Not Applicable",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-103",
+   "tags": [
+    "muscle"
+   ]
+  },
+  {
+   "osd_id": "OSD-105",
+   "title": "Rodent Research-1 (RR1) NASA Validation Flight: Mouse tibialis anterior muscle transcriptomic, proteomic, and epigenomic data",
+   "organism": "Mus musculus, Not Applicable",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-105",
+   "tags": [
+    "bone",
+    "muscle"
+   ]
+  },
+  {
+   "osd_id": "OSD-162",
+   "title": "Rodent Research-3-CASIS: Mouse eye transcriptomic and proteomic data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-162",
+   "tags": [
+    "eye"
+   ]
+  },
+  {
+   "osd_id": "OSD-174",
+   "title": "Effects of a Closed Space Environment on Gene Expression in Hair Follicles of Astronauts in the International Space Station",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-174",
+   "tags": [
+    "human"
+   ]
+  },
+  {
+   "osd_id": "OSD-194",
+   "title": "Rodent Research-3-CASIS: Mouse retina transcriptomic data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-194",
+   "tags": [
+    "eye"
+   ]
+  },
+  {
+   "osd_id": "OSD-202",
+   "title": "Low dose (0.04 Gy) irradiation (LDR) and hindlimb unloading (HLU) microgravity in mice: brain transcriptomic and epigenomic data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-202",
+   "tags": [
+    "radiation"
+   ]
+  },
+  {
+   "osd_id": "OSD-203",
+   "title": "Low dose (0.04 Gy) irradiation (LDR) and hindlimb unloading (HLU) microgravity in mice: retina transcriptomic and epigenomic data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-203",
+   "tags": [
+    "eye",
+    "radiation"
+   ]
+  },
+  {
+   "osd_id": "OSD-244",
+   "title": "Transcriptional analysis of thymus from mice flown on the RR-6 Mission",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-244",
+   "tags": [
+    "immune"
+   ]
+  },
+  {
+   "osd_id": "OSD-246",
+   "title": "Transcriptional analysis of spleen from mice flown on the RR-6 mission",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-246",
+   "tags": [
+    "immune"
+   ]
+  },
+  {
+   "osd_id": "OSD-270",
+   "title": "Bulk and spatially resolved transcriptional analysis of hearts from mice flown on the RR-3",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-270",
+   "tags": [
+    "cardiovascular"
+   ]
+  },
+  {
+   "osd_id": "OSD-289",
+   "title": "Impact of spaceflight on gene expression in the thymus",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-289",
+   "tags": [
+    "immune"
+   ]
+  },
+  {
+   "osd_id": "OSD-404",
+   "title": "Single cell transcriptional profiling of peripheral blood mononuclear cells (PBMCs) from mice flown on Rodent Research Reference Mission-2 (RRRM-2)",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-404",
+   "tags": [
+    "immune"
+   ]
+  },
+  {
+   "osd_id": "OSD-417",
+   "title": "Specific Host Metabolite and Gut Microbiome Alterations Are Associated with Bone-loss During Spaceflight",
+   "organism": "Microbiota, Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-417",
+   "tags": [
+    "bone",
+    "microbiome"
+   ]
+  },
+  {
+   "osd_id": "OSD-483",
+   "title": "small-RNA sequencing of sEV isolated from plasma of astronauts",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-483",
+   "tags": [
+    "human"
+   ]
+  },
+  {
+   "osd_id": "OSD-484",
+   "title": "Astronauts plasma-derived exosomes induced gene expression in AC16 cells",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-484",
+   "tags": [
+    "human"
+   ]
+  },
+  {
+   "osd_id": "OSD-530",
+   "title": "Cell-free RNA analysis of plasma samples collected from six astronauts in JAXA Cell-Free Epigenome (CFE) Study",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-530",
+   "tags": [
+    "human"
+   ]
+  },
+  {
+   "osd_id": "OSD-569",
+   "title": "Whole Blood Measurements from the SpaceX Inspiration4 Mission (RNA-seq, epitranscriptome, WGS, clonal hematopoiesis, CBC)",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-569",
+   "tags": [
+    "human"
+   ]
+  },
+  {
+   "osd_id": "OSD-570",
+   "title": "SpaceX Inspiration4 PBMC Profiling: snRNA-seq, snATAC-seq, and T-cell and B-cell repertoire profiling",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-570",
+   "tags": [
+    "human",
+    "immune"
+   ]
+  },
+  {
+   "osd_id": "OSD-571",
+   "title": "SpaceX Inspiration4 Plasma Profiling: Proteomics, EVPs, Metabolomics, cfDNA Sequencing and cfRNA Sequencing",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-571",
+   "tags": [
+    "human"
+   ]
+  },
+  {
+   "osd_id": "OSD-574",
+   "title": "SpaceX Inspiration4 Deltoid Skin and Microbiome Data: Spatial Transcriptomics (NanoString GeoMx), Metageomics, and Metatranscriptomics",
+   "organism": "Microbiota, Homo sapiens, Not Applicable",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-574",
+   "tags": [
+    "human",
+    "microbiome"
+   ]
+  },
+  {
+   "osd_id": "OSD-575",
+   "title": "SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays (Comprehensive Metabolic Panel and Multiplex)",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-575",
+   "tags": [
+    "human",
+    "immune",
+    "cardiovascular"
+   ]
+  },
+  {
+   "osd_id": "OSD-599",
+   "title": "Transcriptomic Effects on the Mouse Heart Following 30 Days on the International Space Station",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-599",
+   "tags": [
+    "cardiovascular"
+   ]
+  },
+  {
+   "osd_id": "OSD-656",
+   "title": "SpaceX Inspiration4 Urine Inflammation Panel (Multiplex, NULISAseq)",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-656",
+   "tags": [
+    "human"
+   ]
+  },
+  {
+   "osd_id": "OSD-687",
+   "title": "SpaceX Inspiration4 T-Cell Histone Modification Profiling (H3K4me1, H3K4me3, H3K27ac)",
+   "organism": "Homo sapiens",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-687",
+   "tags": [
+    "human",
+    "immune"
+   ]
+  },
+  {
+   "osd_id": "OSD-792",
+   "title": "Transcriptomic analysis of embryonic mouse hypothalamic N38 cells exposed to high-energy protons and/or simulated microgravity.",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-792",
+   "tags": [
+    "radiation"
+   ]
+  },
+  {
+   "osd_id": "OSD-908",
+   "title": "MicroRNAs shape mouse age-independent tissue adaptation to spaceflight via ECM and developmental pathways - Heart data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-908",
+   "tags": [
+    "cardiovascular"
+   ]
+  },
+  {
+   "osd_id": "OSD-921",
+   "title": "Spaceflight induces systemic effects on extracellular matrix and immune system in different age-stages - Heart atria data",
+   "organism": "Mus musculus",
+   "tissue": "",
+   "link": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-921",
+   "tags": [
+    "immune",
+    "cardiovascular"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,579 @@
+{
+  "_note": "Environment profiles. Dose rates come from content/sources.json (see dose.source_id). Everything marked demo is a demo value, not a validated limit.",
+  "order": [
+    "transit",
+    "station",
+    "lunar",
+    "mars",
+    "clinic"
+  ],
+  "profiles": {
+    "transit": {
+      "id": "transit",
+      "label": "Transit",
+      "subtitle": "Mars cruise spacecraft",
+      "gravity_label": "0 g",
+      "gravity_g": 0,
+      "comms": {
+        "real_one_way_s": 1320,
+        "demo_one_way_s": 20,
+        "label": "Up to 22 min one way",
+        "note": "22 minutes is the worst-case one-way Earth–Mars light time. The demo compresses it to 20 seconds.",
+        "source_id": "light-time-mars"
+      },
+      "dose": {
+        "source_id": "msl-rad-cruise",
+        "mSv_per_day": 1.8,
+        "neutron_share": 0.3,
+        "neutron_share_demo": true
+      },
+      "kit": [
+        "pulse_oximeter",
+        "bp_cuff",
+        "thermometer",
+        "aed",
+        "oxygen",
+        "aspirin",
+        "airway_kit",
+        "restraint_system"
+      ],
+      "exercise": {
+        "prescription_min": 120,
+        "devices": [
+          "Resistive device",
+          "Cycle ergometer"
+        ],
+        "note": "No treadmill on board (the question NASA's Zero T2 study is asking).",
+        "source_id": "nasa-hrp-research"
+      },
+      "thresholds": {
+        "zAmber": 1.5,
+        "zRed": 2.5,
+        "hard": {
+          "spo2": {
+            "redBelow": 90
+          },
+          "temp": {
+            "redAbove": 38.0
+          }
+        },
+        "cabin": {
+          "co2_mmHg": {
+            "amber": 3.0,
+            "red": 6.0
+          },
+          "pressure_kPa": {
+            "low": 97,
+            "high": 104,
+            "nominal": 101.3
+          },
+          "temp_C": {
+            "low": 18,
+            "high": 27
+          },
+          "noise_dBA": {
+            "amber": 62,
+            "red": 70
+          },
+          "light_lux_day": {
+            "low": 250
+          }
+        }
+      },
+      "region_weights": {
+        "head": 0.24,
+        "eyes": 0.08,
+        "inner_ear": 0.04,
+        "heart": 0.14,
+        "lungs": 0.08,
+        "muscles_bones": 0.1,
+        "immune": 0.08,
+        "whole_body": 0.24
+      },
+      "weights_note": "Radiation (whole body) and isolation (head) are weighted highest.",
+      "task_thresholds": {
+        "EVA": 75,
+        "docking": 70,
+        "gravity_transition": 65
+      },
+      "cpr_method": "evetts_russomano",
+      "checks": [
+        {
+          "id": "dosimeter_log",
+          "label": "Log personal dosimeter",
+          "when": "Daily, and after any solar particle event"
+        },
+        {
+          "id": "isolation_checkin",
+          "label": "Mood and crew-time check-in",
+          "when": "Daily"
+        }
+      ],
+      "triage_extras": []
+    },
+    "station": {
+      "id": "station",
+      "label": "Station",
+      "subtitle": "Low Earth orbit station",
+      "gravity_label": "0 g",
+      "gravity_g": 0,
+      "comms": {
+        "real_one_way_s": 1,
+        "demo_one_way_s": 1,
+        "label": "Near real time",
+        "note": "Low Earth orbit: the link to the ground is close to real time.",
+        "source_id": "demo-thresholds"
+      },
+      "dose": {
+        "source_id": "esa-dosis-3d",
+        "mSv_per_day": 0.575,
+        "neutron_share": 0.3,
+        "neutron_share_demo": false
+      },
+      "kit": [
+        "pulse_oximeter",
+        "bp_cuff",
+        "thermometer",
+        "ecg",
+        "aed",
+        "oxygen",
+        "ultrasound",
+        "aspirin",
+        "airway_kit",
+        "iv_fluids",
+        "chest_decompression_kit",
+        "restraint_system"
+      ],
+      "exercise": {
+        "prescription_min": 120,
+        "devices": [
+          "Treadmill",
+          "Resistive device",
+          "Cycle ergometer"
+        ],
+        "note": "Full exercise suite.",
+        "source_id": "nasa-exercise-countermeasure"
+      },
+      "thresholds": {
+        "zAmber": 1.5,
+        "zRed": 2.5,
+        "hard": {
+          "spo2": {
+            "redBelow": 90
+          },
+          "temp": {
+            "redAbove": 38.0
+          }
+        },
+        "cabin": {
+          "co2_mmHg": {
+            "amber": 3.0,
+            "red": 6.0
+          },
+          "pressure_kPa": {
+            "low": 97,
+            "high": 104,
+            "nominal": 101.3
+          },
+          "temp_C": {
+            "low": 18,
+            "high": 27
+          },
+          "noise_dBA": {
+            "amber": 62,
+            "red": 70
+          },
+          "light_lux_day": {
+            "low": 250
+          }
+        }
+      },
+      "region_weights": {
+        "head": 0.16,
+        "eyes": 0.12,
+        "inner_ear": 0.06,
+        "heart": 0.16,
+        "lungs": 0.1,
+        "muscles_bones": 0.16,
+        "immune": 0.1,
+        "whole_body": 0.14
+      },
+      "weights_note": "Balanced; eyes and bone weighted up for long microgravity stays.",
+      "task_thresholds": {
+        "EVA": 75,
+        "docking": 70,
+        "gravity_transition": 65
+      },
+      "cpr_method": "evetts_russomano",
+      "checks": [
+        {
+          "id": "vision_check",
+          "label": "Vision self-check (SANS screening)",
+          "when": "Weekly"
+        }
+      ],
+      "triage_extras": []
+    },
+    "lunar": {
+      "id": "lunar",
+      "label": "Lunar base",
+      "subtitle": "Surface habitat on the Moon",
+      "gravity_label": "1/6 g",
+      "gravity_g": 0.166,
+      "comms": {
+        "real_one_way_s": 1.3,
+        "demo_one_way_s": 2,
+        "label": "About 1.3 s one way",
+        "note": "Earth–Moon light time is about 1.3 seconds each way.",
+        "source_id": "light-time-moon"
+      },
+      "dose": {
+        "source_id": "change4-lnd",
+        "mSv_per_day": 1.369,
+        "neutron_share": 0.3,
+        "neutron_share_demo": true
+      },
+      "kit": [
+        "pulse_oximeter",
+        "bp_cuff",
+        "thermometer",
+        "ecg",
+        "aed",
+        "oxygen",
+        "aspirin",
+        "airway_kit",
+        "iv_fluids",
+        "recompression"
+      ],
+      "exercise": {
+        "prescription_min": 90,
+        "devices": [
+          "Resistive device",
+          "Treadmill with harness"
+        ],
+        "note": "Demo prescription for 1/6 g.",
+        "source_id": "demo-thresholds"
+      },
+      "thresholds": {
+        "zAmber": 1.5,
+        "zRed": 2.5,
+        "hard": {
+          "spo2": {
+            "redBelow": 88
+          },
+          "temp": {
+            "redAbove": 38.0
+          }
+        },
+        "cabin": {
+          "co2_mmHg": {
+            "amber": 3.0,
+            "red": 6.0
+          },
+          "pressure_kPa": {
+            "low": 53,
+            "high": 60,
+            "nominal": 56.5
+          },
+          "temp_C": {
+            "low": 18,
+            "high": 27
+          },
+          "noise_dBA": {
+            "amber": 62,
+            "red": 70
+          },
+          "light_lux_day": {
+            "low": 250
+          }
+        }
+      },
+      "region_weights": {
+        "head": 0.14,
+        "eyes": 0.06,
+        "inner_ear": 0.1,
+        "heart": 0.14,
+        "lungs": 0.16,
+        "muscles_bones": 0.14,
+        "immune": 0.08,
+        "whole_body": 0.18
+      },
+      "weights_note": "Lungs weighted up for dust exposure and a lower-pressure cabin (demo assumption).",
+      "task_thresholds": {
+        "EVA": 78,
+        "docking": 70,
+        "gravity_transition": 65
+      },
+      "cpr_method": "surface_kneeling",
+      "checks": [
+        {
+          "id": "dust_exposure",
+          "label": "Dust exposure check (eyes, cough, skin)",
+          "when": "After every EVA"
+        },
+        {
+          "id": "eva_suit",
+          "label": "EVA suit fit and pressure check",
+          "when": "Before every EVA"
+        }
+      ],
+      "triage_extras": [
+        "dust_question"
+      ]
+    },
+    "mars": {
+      "id": "mars",
+      "label": "Mars surface base",
+      "subtitle": "Surface habitat on Mars",
+      "gravity_label": "3/8 g",
+      "gravity_g": 0.38,
+      "comms": {
+        "real_one_way_s": 1320,
+        "demo_one_way_s": 20,
+        "label": "Up to 22 min one way",
+        "note": "22 minutes is the worst-case one-way Earth–Mars light time. The demo compresses it to 20 seconds.",
+        "source_id": "light-time-mars"
+      },
+      "dose": {
+        "source_id": "msl-rad-surface",
+        "mSv_per_day": 0.67,
+        "neutron_share": 0.3,
+        "neutron_share_demo": true
+      },
+      "kit": [
+        "pulse_oximeter",
+        "bp_cuff",
+        "thermometer",
+        "ecg",
+        "aed",
+        "oxygen",
+        "ultrasound",
+        "aspirin",
+        "airway_kit",
+        "iv_fluids",
+        "chest_decompression_kit",
+        "recompression"
+      ],
+      "exercise": {
+        "prescription_min": 90,
+        "devices": [
+          "Treadmill",
+          "Resistive device"
+        ],
+        "note": "Demo prescription for 3/8 g.",
+        "source_id": "demo-thresholds"
+      },
+      "thresholds": {
+        "zAmber": 1.5,
+        "zRed": 2.5,
+        "hard": {
+          "spo2": {
+            "redBelow": 88
+          },
+          "temp": {
+            "redAbove": 38.0
+          }
+        },
+        "cabin": {
+          "co2_mmHg": {
+            "amber": 3.0,
+            "red": 6.0
+          },
+          "pressure_kPa": {
+            "low": 53,
+            "high": 60,
+            "nominal": 56.5
+          },
+          "temp_C": {
+            "low": 18,
+            "high": 27
+          },
+          "noise_dBA": {
+            "amber": 62,
+            "red": 70
+          },
+          "light_lux_day": {
+            "low": 250
+          }
+        }
+      },
+      "region_weights": {
+        "head": 0.16,
+        "eyes": 0.06,
+        "inner_ear": 0.14,
+        "heart": 0.14,
+        "lungs": 0.1,
+        "muscles_bones": 0.16,
+        "immune": 0.08,
+        "whole_body": 0.16
+      },
+      "weights_note": "Balance (inner ear) and muscles & bones weighted up after landing in 3/8 g.",
+      "task_thresholds": {
+        "EVA": 78,
+        "docking": 70,
+        "gravity_transition": 65
+      },
+      "cpr_method": "surface_kneeling",
+      "checks": [
+        {
+          "id": "gravity_transition",
+          "label": "Balance check after landing",
+          "when": "Daily for the first 7 days on the surface"
+        },
+        {
+          "id": "dcs_check",
+          "label": "Decompression-sickness check (joints, skin, breathing)",
+          "when": "After every EVA"
+        }
+      ],
+      "triage_extras": [
+        "recent_eva_question"
+      ]
+    },
+    "clinic": {
+      "id": "clinic",
+      "label": "Remote clinic",
+      "subtitle": "Earth mode: rural health post far from a hospital",
+      "gravity_label": "1 g",
+      "gravity_g": 1,
+      "comms": {
+        "real_one_way_s": 0,
+        "demo_one_way_s": 5,
+        "label": "Store and forward",
+        "note": "A remote clinic may only reach a doctor when a satellite or radio link is up. Messages wait in the same queue; the demo delivers them after 5 seconds.",
+        "source_id": "demo-thresholds"
+      },
+      "dose": {
+        "source_id": "unscear-background",
+        "mSv_per_day": 0.0066,
+        "neutron_share": 0,
+        "neutron_share_demo": true
+      },
+      "kit": [
+        "pulse_oximeter",
+        "bp_cuff",
+        "thermometer",
+        "aed",
+        "oxygen",
+        "aspirin",
+        "airway_kit",
+        "iv_fluids",
+        "oral_rehydration"
+      ],
+      "exercise": {
+        "prescription_min": 30,
+        "devices": [
+          "Walking",
+          "Daily work"
+        ],
+        "note": "WHO advises adults to do at least 150 minutes of moderate activity a week; 30 minutes a day is used here.",
+        "source_id": "who-activity"
+      },
+      "thresholds": {
+        "zAmber": 1.5,
+        "zRed": 2.5,
+        "hard": {
+          "spo2": {
+            "redBelow": 90
+          },
+          "temp": {
+            "redAbove": 38.0
+          }
+        },
+        "cabin": {
+          "co2_mmHg": {
+            "amber": 3.0,
+            "red": 6.0
+          },
+          "pressure_kPa": {
+            "low": 97,
+            "high": 104,
+            "nominal": 101.3
+          },
+          "temp_C": {
+            "low": 18,
+            "high": 27
+          },
+          "noise_dBA": {
+            "amber": 62,
+            "red": 70
+          },
+          "light_lux_day": {
+            "low": 250
+          }
+        }
+      },
+      "region_weights": {
+        "head": 0.14,
+        "eyes": 0.06,
+        "inner_ear": 0.04,
+        "heart": 0.2,
+        "lungs": 0.14,
+        "muscles_bones": 0.1,
+        "immune": 0.14,
+        "whole_body": 0.18
+      },
+      "weights_note": "Balanced weights; heat and hydration matter most outdoors.",
+      "task_thresholds": {
+        "EVA": 75,
+        "docking": 70,
+        "gravity_transition": 65
+      },
+      "cpr_method": "standard",
+      "checks": [
+        {
+          "id": "heat_check",
+          "label": "Outdoor heat check before field work",
+          "when": "Daily, from NASA POWER weather data"
+        },
+        {
+          "id": "hydration_check",
+          "label": "Fluids check on hot days",
+          "when": "When the heat index is in Caution or above"
+        }
+      ],
+      "triage_extras": [],
+      "earth": true
+    }
+  },
+  "kit_labels": {
+    "pulse_oximeter": "Pulse oximeter",
+    "bp_cuff": "Blood-pressure cuff",
+    "thermometer": "Thermometer",
+    "ecg": "12-lead ECG",
+    "aed": "Defibrillator (AED)",
+    "oxygen": "Medical oxygen",
+    "ultrasound": "Ultrasound",
+    "aspirin": "Aspirin",
+    "airway_kit": "Airway kit",
+    "iv_fluids": "IV fluids",
+    "chest_decompression_kit": "Chest decompression kit",
+    "restraint_system": "Medical restraint system",
+    "recompression": "Recompression (suit or airlock)",
+    "oral_rehydration": "Oral rehydration salts"
+  },
+  "mission_plan": {
+    "demo": true,
+    "note": "Demo mission plan used for the cumulative-dose card: durations are illustrative, dose rates are the sourced values.",
+    "phases": [
+      {
+        "id": "outbound",
+        "label": "Outbound transit",
+        "days": 180,
+        "profile": "transit"
+      },
+      {
+        "id": "surface",
+        "label": "Mars surface stay",
+        "days": 500,
+        "profile": "mars"
+      },
+      {
+        "id": "return",
+        "label": "Return transit",
+        "days": 180,
+        "profile": "transit"
+      }
+    ]
+  }
+}

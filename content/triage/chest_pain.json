@@ -1,0 +1,177 @@
+{
+  "id": "chest_pain",
+  "title": "Chest pain",
+  "voice_aliases": ["chest pain", "chest", "heart"],
+  "disclaimer": "Follows general first-aid logic. A flight surgeon approves the protocol flown on a mission.",
+  "start": "responsive",
+  "nodes": {
+    "responsive": {
+      "prompt": "Is the person awake and answering?",
+      "help": "Tap the shoulder. Ask loudly: are you OK?",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "breathing_awake" },
+        { "label": "No", "voice": "no", "next": "breathing_check" }
+      ]
+    },
+    "breathing_check": {
+      "prompt": "Are they breathing normally?",
+      "help": "Open the airway. Watch the chest for 10 seconds.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "secure_airway" },
+        { "label": "No", "voice": "no", "next": "cpr", "action": "start_cpr" }
+      ]
+    },
+    "secure_airway": {
+      "prompt": "Keep the airway open. Stay with them.",
+      "help": "Restrain the patient so they cannot drift. Call the Crew Medical Officer.",
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "vitals" }
+      ]
+    },
+    "breathing_awake": {
+      "prompt": "Can they breathe and speak in full sentences?",
+      "help": "Listen for gasping or very fast breathing.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "vitals" },
+        { "label": "No", "voice": "no", "next": "oxygen_first" }
+      ]
+    },
+    "oxygen_first": {
+      "prompt": "Give oxygen now. Sit them upright.",
+      "help": "Fit the oxygen mask. Loosen tight clothing.",
+      "requires_kit": "oxygen",
+      "else": "vitals",
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "vitals" }
+      ]
+    },
+    "vitals": {
+      "prompt": "Take vital signs.",
+      "help": "Enter what you can. Skip what you cannot measure.",
+      "capture_vitals": ["spo2", "hr", "bp_sys", "bp_dia"],
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "ecg" }
+      ]
+    },
+    "ecg": {
+      "prompt": "Record a 12-lead ECG.",
+      "help": "Attach the leads and save the trace. It will be sent with the report.",
+      "requires_kit": "ecg",
+      "else": "recent_eva",
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "recent_eva" },
+        { "label": "Skip", "voice": "no", "next": "recent_eva" }
+      ]
+    },
+    "recent_eva": {
+      "prompt": "Were they outside on EVA in the last 24 hours?",
+      "help": "Pressure changes after EVA can cause decompression sickness.",
+      "requires_extra": "recent_eva_question",
+      "else": "pain_type",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "dcs_possible" },
+        { "label": "No", "voice": "no", "next": "pain_type" }
+      ]
+    },
+    "dcs_possible": {
+      "prompt": "Possible decompression sickness. Give oxygen and prepare recompression.",
+      "help": "Keep them still. Use the suit or airlock for recompression if the Crew Medical Officer agrees.",
+      "cause": "Decompression sickness after EVA",
+      "requires_kit": "recompression",
+      "else": "pain_type",
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "monitor" }
+      ]
+    },
+    "pain_type": {
+      "prompt": "Is the pain heavy or squeezing, spreading to the arm or jaw?",
+      "help": "Also ask about sweating and nausea.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "cardiac" },
+        { "label": "No", "voice": "no", "next": "one_sided" }
+      ]
+    },
+    "cardiac": {
+      "prompt": "Possible heart problem. Rest. Give oxygen. Attach the defibrillator pads.",
+      "help": "Give aspirin only if a standing order from the flight surgeon allows it and there is no allergy.",
+      "cause": "Possible cardiac cause",
+      "kit_actions": ["oxygen", "aed", "aspirin"],
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "monitor" }
+      ]
+    },
+    "one_sided": {
+      "prompt": "Is it a sudden sharp pain on one side, with shortness of breath?",
+      "help": "More likely after a pressure change or an injury.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "pneumothorax" },
+        { "label": "No", "voice": "no", "next": "cabin_air" }
+      ]
+    },
+    "pneumothorax": {
+      "prompt": "Possible collapsed lung. Give oxygen. Sit upright. Call the Crew Medical Officer.",
+      "help": "The chest decompression kit is for a trained Crew Medical Officer only.",
+      "cause": "Possible pneumothorax",
+      "kit_actions": ["oxygen", "ultrasound", "chest_decompression_kit"],
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "monitor" }
+      ]
+    },
+    "cabin_air": {
+      "prompt": "Do others have headaches, or is the cabin CO₂ alarm on?",
+      "help": "Check the cabin air panel.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "co2_exposure" },
+        { "label": "No", "voice": "no", "next": "panic" }
+      ]
+    },
+    "co2_exposure": {
+      "prompt": "Possible CO₂ exposure. Move to fresh airflow. Check the scrubber.",
+      "help": "Give oxygen if available. Check the rest of the crew.",
+      "cause": "Possible CO₂ exposure",
+      "kit_actions": ["oxygen"],
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "monitor" }
+      ]
+    },
+    "panic": {
+      "prompt": "Is breathing fast, with tingling fingers, and oxygen level normal?",
+      "help": "This can be panic or hyperventilation. Treat as a heart problem if unsure.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "panic_care" },
+        { "label": "No", "voice": "no", "next": "cardiac" }
+      ]
+    },
+    "panic_care": {
+      "prompt": "Coach slow breathing. In for 4, out for 6. Stay with them.",
+      "help": "Re-check vital signs in 5 minutes. If pain continues, treat as a heart problem.",
+      "cause": "Possible panic or hyperventilation",
+      "options": [
+        { "label": "Done", "voice": "yes", "next": "monitor" }
+      ]
+    },
+    "monitor": {
+      "prompt": "Did they stop responding or stop breathing?",
+      "help": "Keep watching. Re-check vital signs every 5 minutes.",
+      "options": [
+        { "label": "Yes", "voice": "yes", "next": "cpr", "action": "start_cpr" },
+        { "label": "No", "voice": "no", "next": "end" }
+      ]
+    },
+    "cpr": {
+      "type": "cpr",
+      "prompt": "Start CPR now.",
+      "help": "Push to the beat. Attach the defibrillator as soon as it arrives.",
+      "kit_actions": ["aed"],
+      "options": [
+        { "label": "Stop CPR", "voice": "stop", "next": "end" }
+      ]
+    },
+    "end": {
+      "type": "end",
+      "prompt": "Report ready for Houston.",
+      "help": "The log is compressed and queued on the delayed link.",
+      "options": []
+    }
+  }
+}
