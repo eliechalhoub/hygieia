@@ -18,7 +18,7 @@ npm install
 npm run demo
 ```
 
-`npm run demo` seeds the database on Day 143 with the Transit profile, starts the app on port 3000 and opens the browser. It needs no network. Only the AI chat needs the internet and an `ANTHROPIC_API_KEY` in `.env.local`.
+`npm run demo` seeds the database on Day 143 with the Transit profile, starts the app on port 3000 and opens the browser. It needs no network. Only the AI chat needs the internet and an `OPENAI_API_KEY` in `.env.local`.
 
 Other commands:
 

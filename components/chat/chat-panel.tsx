@@ -89,6 +89,7 @@ export function ChatPanel({ astronautId, crew, onClose }: { astronautId: number;
         <div>
           <h2 className="font-display text-sm font-semibold">Ask Hygieia</h2>
           <p className="text-xs text-soft">For {me.name}. Uses a cloud model that stands in for a future onboard one.</p>
+          <p data-testid="chat-si-label" className="si-mark mt-0.5">Responses are SI-generated</p>
         </div>
         <Button variant="ghost" size="icon" aria-label="Close chat" onClick={onClose}><IconX /></Button>
       </div>
@@ -147,7 +148,7 @@ export function ChatPanel({ astronautId, crew, onClose }: { astronautId: number;
           />
           <Button type="submit" size="icon" disabled={busy || !input.trim()} aria-label="Send"><IconSend /></Button>
         </div>
-        <p className="mt-1.5 text-[11px] text-soft">Not a diagnosis. Emergency? Use the red button — it works without this chat.</p>
+        <p className="mt-1.5 text-[11px] text-soft">SI-generated, not a diagnosis. Emergency? Use the red button — it works without this chat.</p>
       </form>
     </aside>
   );

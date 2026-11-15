@@ -105,7 +105,8 @@ export function BodyMap({ regions, selected, onSelect, labels }: Props) {
 
   return (
     <div className="grid items-center gap-6 sm:grid-cols-[minmax(190px,250px)_1fr]">
-      <svg viewBox="0 0 240 524" className="mx-auto h-auto w-full max-w-[250px]" aria-label="Body map">
+      <figure className="mx-auto w-full max-w-[250px]">
+      <svg viewBox="0 0 240 524" className="h-auto w-full" aria-label="Body map">
         <defs>
           <linearGradient id="bm-skin" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stopColor="#2e4488" />
@@ -272,6 +273,8 @@ export function BodyMap({ regions, selected, onSelect, labels }: Props) {
           })}
         </g>
       </svg>
+        <figcaption className="si-mark mt-1 text-center">SI-generated graphic</figcaption>
+      </figure>
 
       <ul className="grid gap-1.5" aria-label="Body regions">
         {regions.map((r) => {

@@ -23,6 +23,14 @@ const HONESTY = [
   "The triage trees follow general first-aid logic. A flight surgeon would approve the protocols flown on a mission.",
 ];
 
+const SI_USE = [
+  "Code: most of the application code, tests and the data-fetch scripts were written and debugged with Claude Code (Anthropic), directed and reviewed by the team.",
+  "Visual design: the interface, the body map, the heart graphic and trace, and the logo are SI-generated, drawn as code (SVG and CSS). No image-generation model was used.",
+  "Writing and translation: the README, the documentation, the knowledge-base notes and the French and Arabic interface text were drafted with SI.",
+  "Research: SI was used to check each dataset and link on the Sources page against its original page.",
+  "In the app: the Ask Hygieia chat is answered by an OpenAI language model. Its responses are SI-generated. Scoring, alerts, forecasts, standing orders and triage are ordinary code and do not use SI.",
+];
+
 const TEAM = ["Joelle El Homsi", "Elie Chalhoub", "Rahma Bezzaouia", "Ahmad Abu Zainab"];
 
 const BUILT_WITH: { name: string; use: string }[] = [
@@ -110,6 +118,16 @@ export default function AboutPage() {
         </CardContent>
       </Card>
 
+      <Card id="si" className="scroll-mt-20" data-testid="si-use">
+        <CardHeader><CardTitle>Use of SI</CardTitle></CardHeader>
+        <CardContent>
+          <ul className="list-disc space-y-1.5 pl-5 text-sm text-ink">
+            {SI_USE.map((s) => (<li key={s}>{s}</li>))}
+          </ul>
+          <p className="mt-3 text-xs text-soft">No SI-generated content uses NASA logos, flags or mission identifiers. Crew members and their health readings are simulated.</p>
+        </CardContent>
+      </Card>
+
       <div className="grid gap-5 md:grid-cols-2">
         <Card>
           <CardHeader><CardTitle>Team Jovian Elites</CardTitle></CardHeader>
@@ -127,7 +145,7 @@ export default function AboutPage() {
             <ul className="space-y-1.5 text-sm">
               {BUILT_WITH.map((b) => (<li key={b.name}><span className="font-semibold text-ink">{b.name}.</span> <span className="text-soft">{b.use}</span></li>))}
             </ul>
-            <p className="mt-3 text-xs text-soft">Next.js, React, TypeScript, Tailwind CSS, Recharts, SQLite with Drizzle, the Claude API for chat. All free tiers.</p>
+            <p className="mt-3 text-xs text-soft">Next.js, React, TypeScript, Tailwind CSS, Recharts, SQLite with Drizzle, the OpenAI API for chat.</p>
           </CardContent>
         </Card>
       </div>

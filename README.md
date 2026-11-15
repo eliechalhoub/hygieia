@@ -112,7 +112,7 @@ flowchart LR
   C --> TRI
   TRI -- gzip report --> SRV
   SRV -- deliver_at = sent_at + delay --> HOU
-  CHAT -. optional .-> CL[Claude API]
+  CHAT -. optional .-> CL[OpenAI API]
 ```
 
 - **App:** Next.js (App Router), React, TypeScript, one process. Tailwind CSS with components in the shadcn/ui pattern. Recharts for charts. The body map is an inline SVG component.
@@ -174,6 +174,21 @@ Linked but not downloaded: NASA OSDR RadLab, NASA OSDR EDA, ESA HREDA, JAXA PADL
 - A real solar particle event sets the timing of the replayed storm. The size of the dose spike on board is a demo value.
 - Voice commands use the browser's speech recognition, which in Chrome and Edge needs a network. Buttons, typed commands and read-aloud prompts work offline.
 - The triage trees are demo protocols. A flight surgeon would have to approve real ones.
+
+## Use of SI
+
+SI (AI) tools were used to build this project, as permitted by the NASA Space Apps Challenge rules.
+
+| Where | How SI was used |
+|---|---|
+| Code | Most of the application code, the tests and the data-fetch scripts were written and debugged with Claude Code (Anthropic), directed and reviewed by the team. Commits carry a `Co-Authored-By: Claude` line. |
+| Visual design | The interface, the body map, the heart graphic and trace, and the logo are SI-generated, drawn as code (SVG and CSS). No image-generation model was used. The app footer says so. |
+| Writing and translation | This README, the files in `docs/`, the knowledge-base notes in `content/kb/` and the French and Arabic interface text were drafted with SI. |
+| Research | SI was used to check each dataset and link in `docs/datasets.md` against its original page. |
+| Data | Crew members and their health readings are simulated by a seeded generator script (`lib/db/seed.ts`) that was written with SI. Space-agency data is real and fetched as-is. |
+| In the app | The Ask Hygieia chat is answered by an OpenAI language model; the panel labels its responses as SI-generated. Scoring, alerts, forecasts, standing orders and triage are ordinary code and do not use SI. |
+
+No SI-generated content uses NASA logos, flags or mission identifiers.
 
 ## Built with
 

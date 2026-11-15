@@ -146,7 +146,7 @@ export function HeartCard({ status, bpm, verdict, vitals, kit }: HeartCardProps)
       <div className="relative flex flex-wrap items-center gap-2 border-t border-line/70 px-6 py-3">
         <span className="label">Cardiac kit on board</span>
         {kit.length ? kit.map((k) => (<span key={k} className="chip">{k}</span>)) : <span className="text-xs text-soft">None in this profile</span>}
-        <span className="ml-auto"><SourceLink id="nasa-hrp-risks" label="NASA cardiovascular risk" /></span>
+        <span className="ml-auto flex items-center gap-3"><span className="si-mark">SI-generated graphic · trace paced at measured rate</span><SourceLink id="nasa-hrp-risks" label="NASA cardiovascular risk" /></span>
       </div>
     </section>
   );

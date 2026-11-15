@@ -55,5 +55,12 @@
     "typescript": "^5",
     "vitest": "^5.1.0"
   },
-  "description": "Hygieia - onboard crew-health assistant demo (NASA Space Apps 2026, team Jovian Elites)"
+  "description": "Hygieia - onboard crew-health assistant (NASA Space Apps 2026, team Jovian Elites). Built with SI assistance: see README, 'Use of SI'.",
+  "siDisclosure": {
+    "code": "Written and debugged with Claude Code (Anthropic), directed and reviewed by the team.",
+    "design": "Interface and graphics (SVG/CSS) are SI-generated. No image-generation model was used.",
+    "writing": "Documentation, knowledge-base notes and FR/AR interface text drafted with SI.",
+    "data": "Crew health data is simulated by an SI-written generator script. Space-agency data is real.",
+    "runtime": "The Ask Hygieia chat is answered by an OpenAI language model."
+  }
 }

@@ -248,6 +248,7 @@ export function AppShell({ mission, crew, profiles, lang, children }: ShellProps
         <span className="font-display text-ink">Hygieia</span> — {t("footer.named")}{" "}
         {lang !== "en" && <span className="block">{t("note.clinical")}</span>}
         <Link className="text-teal hover:underline" href="/about">About</Link> · <Link className="text-teal hover:underline" href="/sources">Sources</Link>
+        <span data-testid="si-footer" className="si-mark mt-1.5 block">Interface and graphics are SI-generated · <Link className="hover:underline" href="/about#si">Use of SI</Link></span>
       </footer>
 
       {/* Persistent emergency button */}

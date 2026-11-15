@@ -263,6 +263,16 @@
     color: #b4c0d6;
   }
 
+  /* Small mark on SI-generated graphics: readable, but out of the way. */
+  .si-mark {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #b4c0d6;
+    opacity: 0.75;
+  }
+
   .gradient-text {
     background: linear-gradient(90deg, #eef2f8, #3dd6c4 60%, #8fa0ff);
     -webkit-background-clip: text;

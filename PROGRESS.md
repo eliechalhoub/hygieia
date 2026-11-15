@@ -54,7 +54,7 @@ The e2e suite was re-run on the final commit (3 passing). A fresh clone was test
 - **Session 4 changes under Playwright.** The e2e suite was not re-run after the redesign; one assertion was updated by hand (the About page note).
 - **The original mission-day error.** It could not be reproduced in development or production on this machine; the fixes above address the likely causes.
 
-- **AI chat against the live API.** No `ANTHROPIC_API_KEY` on this machine. Only the "Chat unavailable offline" fallback has been exercised.
+- **AI chat against the live API.** The chat now calls the OpenAI Responses API. No `OPENAI_API_KEY` on this machine, so only the "Chat unavailable" fallback has been exercised.
 - **Docker image.** Docker is not installed here; only the standalone build it copies was run.
 - **Service worker behaviour offline** (registered in production builds only; not tested in a browser).
 - **Real microphone input.** Voice commands were tested through the typed-command path, which shares the same handler.

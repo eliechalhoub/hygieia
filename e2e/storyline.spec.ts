@@ -192,11 +192,11 @@ test("pages render: space weather, sources, knowledge base, about, check, chat f
   await expect(page.getByTestId("pvt-start")).toBeVisible();
 
   // Chat: with no API key the panel says so, and the rest of the app keeps working.
-  if (!process.env.ANTHROPIC_API_KEY) {
+  if (!process.env.OPENAI_API_KEY) {
     await page.getByTestId("chat-toggle").click();
     await page.getByTestId("chat-input").fill("Why am I green?");
     await page.getByTestId("chat-input").press("Enter");
-    await expect(page.getByTestId("chat-notice")).toContainText("Chat unavailable offline — everything else works.", { timeout: 30_000 });
+    await expect(page.getByTestId("chat-notice")).toContainText("Chat unavailable", { timeout: 30_000 });
   }
 });
 
